@@ -1,6 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash
 folder=ubuntu20-fs
-dlink="https://raw.githubusercontent.com/AndronixApp/AndronixOrigin/master/APT"
+dlink="https://raw.githubusercontent.com/ElBedeawi/AndronixOrigin/master/APT"
 if [ -d "$folder" ]; then
 	first=1
 	echo "skipping downloading"
@@ -22,7 +22,7 @@ if [ "$first" != 1 ];then
 		*)
 			echo "unknown architecture"; exit 1 ;;
 		esac
-		wget "https://github.com/AndronixApp/AndronixOrigin/raw/master/Rootfs/Ubuntu20/focal-${archurl}.tar.gz" -O $tarball
+		wget "https://github.com/ElBedeawi/AndronixOrigin/raw/master/Rootfs/Ubuntu20/focal-${archurl}.tar.gz" -O $tarball
 
 fi
 	cur=`pwd`
@@ -74,13 +74,13 @@ EOM
 mkdir -p ubuntu20-fs/var/tmp
 rm -rf ubuntu20-fs/usr/local/bin/*
 echo "127.0.0.1 localhost localhost" > $folder/etc/hosts
-wget -q https://raw.githubusercontent.com/AndronixApp/AndronixOrigin/master/Rootfs/Ubuntu19/.profile -O ubuntu20-fs/root/.profile.1 > /dev/null
+wget -q https://raw.githubusercontent.com/ElBedeawi/AndronixOrigin/master/Rootfs/Ubuntu19/.profile -O ubuntu20-fs/root/.profile.1 > /dev/null
 cat $folder/root/.profile.1 >> $folder/root/.profile && rm -rf $folder/root/.profile.1
-wget -q https://raw.githubusercontent.com/AndronixApp/AndronixOrigin/master/Rootfs/Ubuntu19/.bash_profile-ub19 -O ubuntu20-fs/root/.bash_profile > /dev/null
-wget -q https://raw.githubusercontent.com/AndronixApp/AndronixOrigin/master/Rootfs/Ubuntu19/vnc -P ubuntu20-fs/usr/local/bin > /dev/null
-wget -q https://raw.githubusercontent.com/AndronixApp/AndronixOrigin/master/Rootfs/Ubuntu19/vncpasswd -P ubuntu20-fs/usr/local/bin > /dev/null
-wget -q https://raw.githubusercontent.com/AndronixApp/AndronixOrigin/master/Rootfs/Ubuntu19/vncserver-stop -P ubuntu20-fs/usr/local/bin > /dev/null
-wget -q https://raw.githubusercontent.com/AndronixApp/AndronixOrigin/master/Rootfs/Ubuntu19/vncserver-start -P ubuntu20-fs/usr/local/bin > /dev/null
+wget -q https://raw.githubusercontent.com/ElBedeawi/AndronixOrigin/master/Rootfs/Ubuntu19/.bash_profile-ub19 -O ubuntu20-fs/root/.bash_profile > /dev/null
+wget -q https://raw.githubusercontent.com/ElBedeawi/AndronixOrigin/master/Rootfs/Ubuntu19/vnc -P ubuntu20-fs/usr/local/bin > /dev/null
+wget -q https://raw.githubusercontent.com/ElBedeawi/AndronixOrigin/master/Rootfs/Ubuntu19/vncpasswd -P ubuntu20-fs/usr/local/bin > /dev/null
+wget -q https://raw.githubusercontent.com/ElBedeawi/AndronixOrigin/master/Rootfs/Ubuntu19/vncserver-stop -P ubuntu20-fs/usr/local/bin > /dev/null
+wget -q https://raw.githubusercontent.com/ElBedeawi/AndronixOrigin/master/Rootfs/Ubuntu19/vncserver-start -P ubuntu20-fs/usr/local/bin > /dev/null
 
 chmod +x ubuntu20-fs/root/.bash_profile
 chmod +x ubuntu20-fs/root/.profile
